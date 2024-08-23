@@ -4,8 +4,8 @@
 
 :root{
     --bacground: linear-gradient(white, #89CFF0); 
-    --cor-principai: #775bf5;
-    --cor-divisao:#da61ff;
+    --cor-principai: #361ad3;
+    --cor-divisao:#5f159b;
     --branco: #fff;
     --azul-claro:#89CFF0; 
     --azul-escuro: #215cda;
@@ -22,5 +22,5 @@ body{
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    font-family: var(--fonte-primaria);
+    font-family: var(--fonte-secundaria);
 }
