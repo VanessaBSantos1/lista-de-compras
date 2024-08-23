@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lista de compras</title>
+        <link rel="stylesheet" href="styles/reset.css">
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/compras.css">
+    </head>
+    <body>
+        <header></header>
+        <main class="Conteiner_compras">
+            <img src="assets/paper bag with groceries 1.svg" alt="imagem de uma sacola de compras" class="imagem">
+            <form id="form">
+                <input type="text" id="itemInput" placeholder="Digite o item que deseja adicionar" required>
+                <button type="submit" class="botao_salvar">Salvar item</button>
+            </form>
+            <br>
+            <section class="lista_compras">
+                <div class="compras">
+                    <h1>Lista de compras</h1>
+                    <hr class="linha_divisao">
+                    <ul id="listaDeCompras"></ul>
+                </div>
+                <div class="comprados">
+                    <h1>Comprado</h1>
+                    <hr class="linha_divisao">
+                    <ul id="listaDeComprados"></ul>
+                </div>
+        </main>
+        <footer></footer>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+.Conteiner_compras{
+    background-color: var(--branco);
+    padding: 6em;
+    border-radius: 24%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagem{
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+#itemInput{
+    border-radius: 24px;
+    padding: 1em;
+    border: 1px solid var(--azul-claro);
+    width: 100%;
+}
+
+#itemInput:hover{
+    border: 1px solid #032a3b
+}
+
+.botao_salvar{
+    background-color: var(--azul-claro);
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: var(--branco);
+    border-radius: 12px;
+    padding: 1em;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: var(--fonte-secundaria);
+}
+
+.botao_salvar:hover{
+    background-color: var(--azul-escuro);
+    cursor: pointer;
+    transition: 0.s;
+}
+
+.botao_salvar:active{
+    background-color: var(--branco);
+    color: var(--azul-borda);
+    border: 1px solid var(--azul-borda); 
+}
+
+.lista_compras{
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.linha_divisao{
+    border: none;
+    border-top: 2px dotted var(--cor-divisao); /* Cor dos pontinhos */
+}

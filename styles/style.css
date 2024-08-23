@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Jersey+10&display=swap');
+@import url(compras.css);
+
+:root{
+    --bacground: linear-gradient(white, #89CFF0); 
+    --cor-principai: #775bf5;
+    --cor-divisao:#da61ff;
+    --branco: #fff;
+    --azul-claro:#89CFF0; 
+    --azul-escuro: #215cda;
+    --azul-borda:#4872e4;
+    --fonte-primaria: "Jersey 10", sans-serif;
+    --fonte-secundaria: "DM Serif Text", serif;
+
+}
+
+body{
+    background:var(--bacground);
+    color:var(--cor-principai);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--fonte-primaria);
+}
