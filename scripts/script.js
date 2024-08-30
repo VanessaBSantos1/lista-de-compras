@@ -45,7 +45,7 @@ function adicionarItem(evento) {
 
     // Botão de excluir
     const buttonExcluir = document.createElement("button");
-    buttonExcluir.classList.add("intem_lista_button");
+    buttonExcluir.classList.add("item_lista_button");
     const imgExcluir = document.createElement("img");
     imgExcluir.src = "assets/Excluir.svg";
     imgExcluir.alt = "EXCLUIR";
@@ -53,7 +53,7 @@ function adicionarItem(evento) {
 
     // Botão de editar
     const buttonEditar = document.createElement("button");
-    buttonEditar.classList.add("intem_lista_button");
+    buttonEditar.classList.add("item_lista_button");
     const imgEditar = document.createElement("img");
     imgEditar.src = "assets/Edição.svg";
     imgEditar.alt = "EDITAR";
