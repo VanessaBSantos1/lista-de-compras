@@ -1,8 +1,16 @@
 li {
-    font-family: var(--fonte-secundaria);
+    font-family: var(--fonte-primaria);
     color: var(--preto);
 }
+
+h1 {
+    font-family: var(--fonte-primaria);
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
 }
+
 .Conteiner_compras{
     background-color: var(--branco);
     padding: 6em;
@@ -48,7 +56,7 @@ li {
 .botao_salvar:hover{
     background-color: var(--azul-escuro);
     cursor: pointer;
-    transition: 0.s;
+    transition: 0.2s;
 }
 
 .botao_salvar:active{
@@ -57,17 +65,24 @@ li {
     border: 1px solid var(--azul-borda); 
 }
 
-.lista_compras{
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: 400;
-    font-style: italic;
-}
 
 .linha_divisao{
     border: none;
     border-top: 2px dotted var(--cor-divisao); /* Cor dos pontinhos */
 }
+
+.lista_item_conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+/* Estilo dos checkboxes personalizados */
+.input_checkobox {
+    display: none;
+}
+
 
 .input_checkobox{
     display: none;
@@ -78,33 +93,61 @@ li {
     height: 24px;
     border: 1px solid var(--preto);
     border-radius: 4px;
-    background-color: beige;
     cursor: pointer;
-}
-
-.checked{
-    background-color: var(--preto);
+    display: inline-block;
+    vertical-align: middle;
     position: relative;
+    margin-right: 8px;
 }
 
-.checkbox_customizado.checked::after{
-    content:"";
-    border-top: 2px solid var(--branco);
-    border-left: 2px solid var(--branco);
+.lista_item_conteiner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5em 0;
+}
+
+/* Estilo dos checkboxes personalizados */
+.input_checkobox {
+    display: none;
+}
+
+.checkbox_customizado {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--preto);
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 8px;
+}
+
+/* Adiciona o "V" ao checkbox quando ele é marcado */
+.input_checkobox:checked + .checkbox_customizado::after {
+    content: "";
+    border-top: 2px solid var(--preto);
+    border-left: 2px solid var(--preto);
     position: absolute;
     top: 2px;
     left: 8px;
     height: 14px;
     width: 5px;
     transform: rotate(225deg);
+    
 }
 
-.item_lista_button{
+/* Risco o texto e mudo a cor ao mover para a lista de "Comprados" */
+.strikethrough div {
+    text-decoration: line-through;
+    color: var(--cinza);
+}
+
+/* Botões de ação ao lado do item */
+.item_lista_button {
     background: transparent;
     border: none;
-}
-
-.lista_item_conteiner{
-    display: flex;
-    justify-content: space-between;
+    cursor: pointer;
+    padding: 0 5px;
 }

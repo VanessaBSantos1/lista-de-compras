@@ -1,8 +1,7 @@
-console.log("hello world");
-
 const itemInput = document.getElementById("itemInput");
 const botao = document.getElementById("adicionar_item");
 const listaDeCompras = document.getElementById("listaDeCompras");
+const listaDeComprados = document.getElementById("listaDeComprados");
 
 botao.addEventListener("click", adicionarItem);
 
@@ -20,7 +19,7 @@ function adicionarItem(evento) {
     // Adicionando o container ao item da lista
     itemLista.appendChild(listaItemConteiner);
 
-    // Criando a div que vai conter o checkbox
+    // Criando a div que vai conter o checkbox e o texto
     const div = document.createElement("div");
     listaItemConteiner.appendChild(div);
 
@@ -39,6 +38,25 @@ function adicionarItem(evento) {
     checkbox.appendChild(inputCheckbox);
     checkbox.appendChild(customizado);
     checkboxConteiner.appendChild(checkbox);
+
+    // Adicionando o texto do item
+    const textoItem = document.createElement("span");
+    textoItem.textContent = itemInput.value;
+    div.appendChild(textoItem);
+
+    // Adicionando a data e hora ao item
+    const dataHora = new Date().toLocaleString('pt-BR', {
+        weekday: 'long',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+    const dataItem = document.createElement("span");
+    dataItem.classList.add("data_item");
+    dataItem.textContent = ` ${dataHora}`;
+    div.appendChild(dataItem);
 
     // Criando a div que vai conter os botões de edição/exclusão
     const divButton = document.createElement("div");
@@ -64,10 +82,6 @@ function adicionarItem(evento) {
     divButton.appendChild(buttonEditar);
     listaItemConteiner.appendChild(divButton);
 
-    // Adicionando o texto do item
-    const textoItem = document.createTextNode(itemInput.value);
-    div.appendChild(textoItem);
-
     // Adicionando o item completo à lista
     listaDeCompras.appendChild(itemLista);
 
@@ -82,10 +96,12 @@ function adicionarItem(evento) {
     // Evento de marcação do checkbox
     inputCheckbox.addEventListener("change", () => {
         if (inputCheckbox.checked) {
-            // Move o item para a lista de comprados
-            document.getElementById("listaDeComprados").appendChild(itemLista);
+            // Mover o item para a lista de "Comprados" e aplicar o estilo riscado
+            listaItemConteiner.classList.add("strikethrough");
+            listaDeComprados.appendChild(itemLista);
         } else {
-            // Move o item de volta para a lista de compras
+            // Remover o riscado e mover de volta para a lista de compras
+            listaItemConteiner.classList.remove("strikethrough");
             listaDeCompras.appendChild(itemLista);
         }
     });
