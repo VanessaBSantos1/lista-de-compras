@@ -6,6 +6,7 @@ li {
 h1 {
     font-family: var(--fonte-primaria);
     font-size: 20px;
+    line-height: 32px;
     text-transform: uppercase;
     font-weight: 400;
     font-style: italic;
@@ -68,7 +69,8 @@ h1 {
 
 .linha_divisao{
     border: none;
-    border-top: 2px dotted var(--cor-divisao); /* Cor dos pontinhos */
+    border-bottom: 3px dotted var(--cor-divisao); /* Cor dos pontinhos */
+    margin-bottom: 24px;
 }
 
 .lista_item_conteiner {
