@@ -3,8 +3,8 @@
 @import url(compras.css);
 
 :root{
-    --bacground: linear-gradient(white, #89CFF0); 
-    --cor-principai: #361ad3;
+    --background: linear-gradient(white, #89CFF0); 
+    --cor-principal: #361ad3;
     --cor-divisao:#5f159b;
     --branco: #fff;
     --azul-claro:#89CFF0; 
@@ -18,10 +18,11 @@
 }
 
 body{
-    background:var(--bacground);
-    color:var(--cor-principai);
+    background:var(--background);
+    color:var(--cor-principal);
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    margin: 0;
 }

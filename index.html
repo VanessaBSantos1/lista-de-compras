@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Uma lista de compras interativa onde você pode adicionar, editar e excluir itens.">
+
         <title>Lista de compras</title>
         <link rel="stylesheet" href="styles/reset.css">
         <link rel="stylesheet" href="styles/style.css">
@@ -10,39 +12,37 @@
     </head>
     <body>
         <header></header>
-        <main class="Conteiner_compras">
+        <main class="conteiner_compras">
             <img src="assets/paper bag with groceries 1.svg" alt="imagem de uma sacola de compras" class="imagem">
+            
+            <!-- Formulário para adicionar itens -->
             <form id="form">
                 <input type="text" id="itemInput" placeholder="O que deseja adicionar?" required>
                 <button id="adicionar_item" class="botao_salvar">Salvar item</button>
             </form>
             <br>
+            
+            <!-- Seção da lista de compras -->
             <section class="lista_compras">
                 <div class="compras">
-                    <h1>Lista de compras</h1>
+                    <h1>Lista de Compras</h1>
                     <hr class="linha_divisao">
-                    <ul id="listaDeCompras">
-                        <li>
-                            <div class="lista_item_conteiner">
-                                <div>
-                                    <div class="checkbox_conteiner">
-                                        <label for="checkbox_1">
-                                            <p id="mensagem-lista-vazia" style="display: block">Sua lista está vazia. Adicione itens a ela para não
-                                                esquecer nada na próxima compra!</p>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                    <ul id="listaDeCompras"></ul>
+                    <p id="mensagemListaVazia" class="mensagem_lista_vazia">Sua lista está vazia. Adicione itens a ela para não esquecer nada na próxima compra.</p>
                 </div>
+                
+                <!-- Seção dos itens comprados -->
                 <div class="comprados">
                     <h1>Comprado</h1>
                     <hr class="linha_divisao">
                     <ul id="listaDeComprados"></ul>
                 </div>
+            </section>
         </main>
+        
         <footer></footer>
+        
+        <!-- Importação do JavaScript -->
         <script src="scripts/script.js"></script>
     </body>
 </html>
