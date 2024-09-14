@@ -34,14 +34,15 @@ function adicionarItem(evento) {
     listaItemConteiner.classList.add("lista_item_conteiner");
     itemLista.appendChild(listaItemConteiner);
 
-    // Contêiner que vai organizar a checkbox, texto e data
-    const div = document.createElement("div");
-    listaItemConteiner.appendChild(div);
+    // Contêiner principal que vai organizar a checkbox, texto e data
+    const divPrincipal = document.createElement("div");
+    divPrincipal.classList.add("div_principal");
+    listaItemConteiner.appendChild(divPrincipal);
 
     // Contêiner da checkbox
     const checkboxConteiner = document.createElement("div");
     checkboxConteiner.classList.add("checkbox_conteiner");
-    div.appendChild(checkboxConteiner);
+    divPrincipal.appendChild(checkboxConteiner);
 
     // Checkbox e checkbox customizado
     const checkbox = document.createElement("label");
@@ -56,15 +57,16 @@ function adicionarItem(evento) {
     checkbox.appendChild(customizado);
     checkboxConteiner.appendChild(checkbox);
 
-    // Contêiner que vai organizar o texto e a data em coluna
-    const itemTextoConteiner = document.createElement("div");
-    itemTextoConteiner.classList.add("item_texto_conteiner");
-    div.appendChild(itemTextoConteiner);
+    // Contêiner de texto e data
+    const itemTextoDataConteiner = document.createElement("div");
+    itemTextoDataConteiner.classList.add("item_texto_data_conteiner");
+    divPrincipal.appendChild(itemTextoDataConteiner);
 
-    // Adiciona texto ao item
+    // Adiciona texto ao item (ao lado da checkbox)
     const textoItem = document.createElement("span");
     textoItem.textContent = itemInput.value;
-    itemTextoConteiner.appendChild(textoItem);
+    textoItem.classList.add("texto_item");
+    itemTextoDataConteiner.appendChild(textoItem);
 
     // Adiciona data e hora abaixo do texto
     const dataHora = new Date().toLocaleString('pt-BR', {
@@ -79,7 +81,7 @@ function adicionarItem(evento) {
     const dataItem = document.createElement("span");
     dataItem.classList.add("data_item");
     dataItem.textContent = `${dataHora}`;
-    itemTextoConteiner.appendChild(dataItem);
+    itemTextoDataConteiner.appendChild(dataItem);
 
     // Adiciona os botões de ação
     const divButton = document.createElement("div");
