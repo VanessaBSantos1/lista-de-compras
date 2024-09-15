@@ -25,7 +25,7 @@ function adicionarItem(evento) {
     if (itemInput.value.trim() === "") {
         alert('Por favor, adicione um item.');
         return;
-    }
+    } //pede para incerir um intem valido no input
 
     // Cria os elementos da lista
     const itemLista = document.createElement("li");
