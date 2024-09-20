@@ -111,9 +111,20 @@ function adicionarItem(evento) {
 
     // Evento de exclusão do item
     buttonExcluir.addEventListener("click", () => {
-        listaDeCompras.removeChild(itemLista);
-        atualizarMensagemListaVazia();
+        const confirmacao = confirm("Tem certeza que deseja excluir este item? ");
+        if (confirmacao) {
+            listaDeCompras.removeChild(itemLista);
+            atualizarMensagemListaVazia();
+        }
     });
+
+    // Evento de edição do item
+    buttonEditar.addEventListener("click", () => {
+        const novoTexto = prompt("Edite o item:", textoItem.textContent);
+        if(novoTexto && novoTexto.trim() !== "") {
+            textoItem.textContent = novoTexto.trim();
+        }
+    })
 
     // Evento de marcação do checkbox
     inputCheckbox.addEventListener("change", () => {
