@@ -68,19 +68,10 @@ function adicionarItem(evento) {
     textoItem.classList.add("texto_item");
     itemTextoDataConteiner.appendChild(textoItem);
 
-    // Adiciona data e hora abaixo do texto
-    const dataHora = new Date().toLocaleString('pt-BR', {
-        weekday: 'long',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-
+    // Adiciona data e hora abaixo do texto  
     const dataItem = document.createElement("span");
     dataItem.classList.add("data_item");
-    dataItem.textContent = `${dataHora}`;
+    dataItem.textContent = dataCriacao();
     itemTextoDataConteiner.appendChild(dataItem);
 
     // Adiciona os botões de ação
@@ -124,6 +115,8 @@ function adicionarItem(evento) {
         if(novoTexto && novoTexto.trim() !== "") {
             textoItem.textContent = novoTexto.trim();
         }
+
+        dataItem.textContent = dataCriacao();
     })
 
     // Evento de marcação do checkbox
@@ -156,4 +149,15 @@ function atualizarMensagemListaVazia() {
     } else {
         mensagem.style.display = 'none';
     }
+}
+
+function dataCriacao() {
+    return new Date().toLocaleString('pt-BR', {
+        weekday: 'long',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
 }
